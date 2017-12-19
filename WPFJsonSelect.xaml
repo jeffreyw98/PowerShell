@@ -1,0 +1,32 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPGJsonParseSelection"
+        Title="Select Settings" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".80*"/>
+            <RowDefinition Height=".10*"/>
+            <RowDefinition Height=".10*"/>
+        </Grid.RowDefinitions>
+        <DockPanel HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Grid.Column="0" LastChildFill="True">
+            <TextBlock TextWrapping="Wrap" Text="Servers" DockPanel.Dock="Top" Margin="2,0,0,0"/>
+            <ListBox x:Name="lstServers"  VirtualizingStackPanel.IsVirtualizing="False" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom" Margin="2,2,1,2" SelectionMode="Extended"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Grid.Column="1" LastChildFill="True">
+            <TextBlock TextWrapping="Wrap" Text="Tasks" DockPanel.Dock="Top" Margin="2,0,0,0"/>
+            <ListBox x:Name="lstTasks" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom" Margin="1,2,2,2" SelectionMode="Extended"/>
+        </DockPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Grid.Row="1" Grid.ColumnSpan="2">
+            <RadioButton x:Name="rbAllTasks" Content="Only Task.json" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Margin="2,0"/>
+            <RadioButton x:Name="rbReplicationDefinition" Content="Only Replication_Definition.json" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Margin="2,0"/>
+        </StackPanel>
+        <Button x:Name="btnSelOk" Content="Ok" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Grid.Row="2" Grid.ColumnSpan="2" Margin="221,1.311,221,5.311"/>
+    </Grid>
+</Window>
